@@ -4,7 +4,7 @@ import { Header } from './components/index'
 function App() {
   return (
     <div>
-      <div className='bg-dark'>
+      <div className='bg-dark h-[200vh]'>
         <Header />
       </div>
     </div>

@@ -20,7 +20,15 @@ body {
 }
 
 .bg-purple {
-  color: #7B4AE2;
+  background-color: #7B4AE2;
+}
+
+.border-purple {
+  border-color: #3a1e55;
+}
+
+.bg-darkpurple {
+  background-color: #231431;
 }
 
 .text-rose {
@@ -33,4 +41,17 @@ body {
 
 .bg-dark {
   background-color: #090E16;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.open-menu {
+  animation: slideDown 0.5s ease-out;
 }
