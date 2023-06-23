@@ -6,7 +6,7 @@ import { PiPaperPlaneTiltLight } from 'react-icons/pi';
 const Header = () => {
     return (
         <div className='border-b border-purple'>
-            <div className='max-w-[1500px] m-auto pl-4 pr-4 pb-8 ' id='header'>
+            <div className='pl-4 pr-4 pb-8 ' id='header'>
                 <div>
                     <Navbar />
                 </div>
