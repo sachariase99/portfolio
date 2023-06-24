@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/Logo.png';
+import { logo } from '../images';
 import BurgerMenu from './burgermenu';
 
 const Navbar = () => {

@@ -1,15 +1,21 @@
 import './App.css';
-import { Header, About } from './components/index'
+import { Header, Card, About, Technologies, Portfolio, Contact, Footer, LandingPage } from './components/index'
 
 function App() {
   return (
     <div>
-      <div className='bg-dark'>
+      <div id='blurred' className='bg-dark'>
         <div className='max-w-[1500px] m-auto'>
           <Header />
+          <Card />
           <About />
+          <Technologies />
+          <Portfolio />
+          <Contact />
         </div>
+        <Footer />
       </div>
+        <LandingPage />
     </div>
   );
 }

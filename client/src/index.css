@@ -10,6 +10,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: 'Raleway', sans-serif;
+  user-select: none;
 }
 
 .text-purple {
@@ -20,8 +21,13 @@
   background-color: #7B4AE2;
 }
 
+.text-whiteopacity {
+  color: white;
+  opacity: 50%;
+}
+
 .bg-purplehover:hover {
-  background-color: #7a4ae221;
+  background-color: #7a4ae210;
 }
 
 .border-lightpurple {
@@ -57,19 +63,6 @@
     height: 0%;
   }
   100% {
-    height: 360px;
-  }
-}
-
-.close-menu {
-  animation: slideUp 0.5s ease-out;
-}
-
-@keyframes slideUp {
-  0% {
-    height: 360px;
-  }
-  100% {
-    height: 0%;
+    height: 270px;
   }
 }

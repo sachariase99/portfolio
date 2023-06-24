@@ -19,11 +19,9 @@ const BurgerMenu = () => {
                     <ul className='flex flex-col text-end p-4'>
                         <li><a className='text-white uppercase font-bold text-[2rem] hover:text-[#7B4AE2] transition-all duration-300' href="#header">Home</a></li>
                         <li><a className='text-white uppercase font-bold text-[2rem] hover:text-[#7B4AE2] transition-all duration-300' href="#about">About me</a></li>
-                        <li><a className='text-white uppercase font-bold text-[2rem] hover:text-[#7B4AE2] transition-all duration-300' href="#skills">Skills</a></li>
+                        <li><a className='text-white uppercase font-bold text-[2rem] hover:text-[#7B4AE2] transition-all duration-300' href="#technologies">Technologies</a></li>
                         <li><a className='text-white uppercase font-bold text-[2rem] hover:text-[#7B4AE2] transition-all duration-300' href="#portfolio">Portfolio</a></li>
-                        <li><a className='text-white uppercase font-bold text-[2rem] hover:text-[#7B4AE2] transition-all duration-300' href="#career">Career</a></li>
                         <li><a className='text-white uppercase font-bold text-[2rem] hover:text-[#7B4AE2] transition-all duration-300' href="#contact">Contact</a></li>
-                        <li><a className='text-white uppercase font-bold text-[2rem] hover:text-[#7B4AE2] transition-all duration-300' href="#photography">Photography</a></li>
                     </ul>
                 </div>
             )}
