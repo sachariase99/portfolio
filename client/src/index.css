@@ -9,9 +9,6 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-}
-
-body {
   font-family: 'Raleway', sans-serif;
 }
 
@@ -21,6 +18,14 @@ body {
 
 .bg-purple {
   background-color: #7B4AE2;
+}
+
+.bg-purplehover:hover {
+  background-color: #7a4ae221;
+}
+
+.border-lightpurple {
+  border-color: #7a4ae263;
 }
 
 .border-purple {
@@ -43,15 +48,28 @@ body {
   background-color: #090E16;
 }
 
+.open-menu {
+  animation: slideDown 0.5s ease-out;
+}
+
 @keyframes slideDown {
   0% {
-    transform: translateY(-100%);
+    height: 0%;
   }
   100% {
-    transform: translateY(0);
+    height: 360px;
   }
 }
 
-.open-menu {
-  animation: slideDown 0.5s ease-out;
+.close-menu {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  0% {
+    height: 360px;
+  }
+  100% {
+    height: 0%;
+  }
 }

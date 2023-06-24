@@ -15,7 +15,7 @@ const BurgerMenu = () => {
                 <span className={`block w-7 h-1 bg-white mt-1 transform transition-all duration-500 ${isOpen ? '-rotate-45 -translate-y-2 bg-white' : ''}`}></span>
             </button>
             {isOpen && (
-                <div className={`fixed bg-darkpurple -mr-3 mt-[3.5rem] rounded-xl overflow-hidden ${isOpen ? 'z-50 open-menu' : ''}`}>
+                <div className={`fixed bg-darkpurple -mr-3 mt-[3.5rem] rounded-xl overflow-hidden ${isOpen ? 'z-50  open-menu' : ''}`}>
                     <ul className='flex flex-col text-end p-4'>
                         <li><a className='text-white uppercase font-bold text-[2rem] hover:text-[#7B4AE2] transition-all duration-300' href="#header">Home</a></li>
                         <li><a className='text-white uppercase font-bold text-[2rem] hover:text-[#7B4AE2] transition-all duration-300' href="#about">About me</a></li>
