@@ -1,5 +1,5 @@
 import React from 'react'
-import { cucode, tshop } from '../images'
+import { cucode, tshop, spicy, globalGoals, gpt } from '../images'
 
 const PortfolioCards = () => {
     return (
@@ -17,28 +17,22 @@ const PortfolioCards = () => {
                         <img className='p-4' src={tshop} alt="T-Shop" />
                     </div>
                 </a>
-                <a href="http://cucode.portfolio-sachariase.com" target='_blank' rel='noreferrer'>
+                <a href="http://spicy.portfolio-sachariase.com" target='_blank' rel='noreferrer'>
                     <div className='w-[250px] border-2 border-purple rounded-2xl bg-purplehover duration-500'>
-                        <p className='text-white mt-4 font-bold text-xl'>CuCode</p>
-                        <img className='p-4' src={cucode} alt="" />
+                        <p className='text-white mt-4 font-bold text-xl'>Spicy</p>
+                        <img className='p-4' src={spicy} alt="Spicy" />
                     </div>
                 </a>
-                <a href="http://cucode.portfolio-sachariase.com" target='_blank' rel='noreferrer'>
+                <a href="http://global-goals.portfolio-sachariase.com" target='_blank' rel='noreferrer'>
                     <div className='w-[250px] border-2 border-purple rounded-2xl bg-purplehover duration-500'>
-                        <p className='text-white mt-4 font-bold text-xl'>CuCode</p>
-                        <img className='p-4' src={cucode} alt="" />
+                        <p className='text-white mt-4 font-bold text-xl'>Global Goals</p>
+                        <img className='p-4' src={globalGoals} alt="Global Goals" />
                     </div>
                 </a>
-                <a href="http://cucode.portfolio-sachariase.com" target='_blank' rel='noreferrer'>
+                <a href="http://gpt-3.portfolio-sachariase.com" target='_blank' rel='noreferrer'>
                     <div className='w-[250px] border-2 border-purple rounded-2xl bg-purplehover duration-500'>
-                        <p className='text-white mt-4 font-bold text-xl'>CuCode</p>
-                        <img className='p-4' src={cucode} alt="" />
-                    </div>
-                </a>
-                <a href="http://cucode.portfolio-sachariase.com" target='_blank' rel='noreferrer'>
-                    <div className='w-[250px] border-2 border-purple rounded-2xl bg-purplehover duration-500'>
-                        <p className='text-white mt-4 font-bold text-xl'>CuCode</p>
-                        <img className='p-4' src={cucode} alt="" />
+                        <p className='text-white mt-4 font-bold text-xl'>GPT</p>
+                        <img className='p-4' src={gpt} alt="GPT-3" />
                     </div>
                 </a>
             </div>

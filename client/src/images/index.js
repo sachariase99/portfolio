@@ -13,6 +13,9 @@ import react from './React.png'
 import javascript from './Javascript.png'
 import cucode from './cucode.png'
 import tshop from './T-Shop.jpg'
+import spicy from './spicy.jpg'
+import globalGoals from './globalGoals.png'
+import gpt from './GPT-3.jpg'
 
 export {
     Avatar,
@@ -30,4 +33,7 @@ export {
     javascript,
     cucode,
     tshop,
+    spicy,
+    globalGoals,
+    gpt,
 }
