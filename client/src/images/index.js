@@ -1,4 +1,5 @@
 import Avatar from './Jannick.png'
+import JannickAvatar from './JannickAvatar.png'
 import Jannick from './Jannick.jpg'
 import logo from './Logo.png'
 import code from './CodeIcon.svg'
@@ -19,6 +20,7 @@ import gpt from './GPT-3.jpg'
 
 export {
     Avatar,
+    JannickAvatar,
     Jannick,
     logo,
     code,
