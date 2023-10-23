@@ -49,7 +49,32 @@ self.addEventListener('fetch', event => {
     console.log('Service Worker: Fetching', event.request.url);
     event.respondWith(
         caches.match(event.request).then(response => {
-            return response || fetch(event.request);
+            return response || fetch(event.request).then(networkResponse => {
+                // Store the network response in the cache
+                return caches.open(cacheName).then(cache => {
+                    cache.put(event.request, networkResponse.clone());
+
+                    // Check and limit the cache size
+                    limitCacheSize(cacheName, 30); // Limit cache to 10 items
+
+                    return networkResponse;
+                });
+            });
         })
     );
 });
+
+// Function to limit the cache size
+const limitCacheSize = (cacheName, numberOfAllowedFiles) => {
+    // Open the specified cache
+    caches.open(cacheName).then(cache => {
+        // Get an array of cache keys
+        cache.keys().then(keys => {
+            // If the number of files exceeds the allowed limit
+            if (keys.length > numberOfAllowedFiles) {
+                // Delete the oldest file (first index) and call the function again until the count is reached
+                cache.delete(keys[0]).then(() => limitCacheSize(cacheName, numberOfAllowedFiles));
+            }
+        });
+    });
+};
