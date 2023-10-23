@@ -1,11 +1,17 @@
-const cacheName = 'cache-v2';
+const cacheName = 'cache-v2'; // Cache version
 
+// Event listener for the 'install' event
 self.addEventListener('install', event => {
+    // Log that the service worker is installing
     console.log('Installing');
+
+    // Wait until the cache is opened and assets are added
     event.waitUntil(
         caches.open(cacheName).then(cache => {
+            // Log that we are caching assets
             console.log('Caching');
             return cache.addAll([
+                // Cache the following assets
                 '/',
                 '/index.html',
                 '/images/Avatar.png',
@@ -23,19 +29,25 @@ self.addEventListener('install', event => {
                 '/static/media/GPT-3.26ca2970fdbcb2a86e12.jpg',
                 '/manifest.json',
                 '/Logo.png',
-                '/logo/android-launchericon-144-144.png',
+                '/logo/android-launchericon-144-144.png'
             ]);
         })
     );
 });
 
+// Event listener for the 'activate' event
 self.addEventListener('activate', event => {
+    // Log that the service worker is activating
     console.log('Activating');
+
+    // Wait until caches are checked and old caches are deleted
     event.waitUntil(
         caches.keys().then(cacheNames => {
             return Promise.all(
+                // Iterate through existing cache names
                 cacheNames.map(existingCacheName => {
                     if (existingCacheName !== cacheName) {
+                        // Log and delete old caches
                         console.log('Deleting old cache', existingCacheName);
                         return caches.delete(existingCacheName);
                     }
@@ -45,18 +57,20 @@ self.addEventListener('activate', event => {
     );
 });
 
+// Event listener for the 'fetch' event
 self.addEventListener('fetch', event => {
+    // Log that the service worker is fetching a resource
     console.log('Service Worker: Fetching', event.request.url);
+
+    // Respond to the fetch event
     event.respondWith(
         caches.match(event.request).then(response => {
+            // Check if the requested resource is in the cache
             return response || fetch(event.request).then(networkResponse => {
-                // Store the network response in the cache
+                // If not in the cache, add it to the cache and limit cache size
                 return caches.open(cacheName).then(cache => {
                     cache.put(event.request, networkResponse.clone());
-
-                    // Check and limit the cache size
-                    limitCacheSize(cacheName, 30); // Limit cache to 10 items
-
+                    limitCacheSize(cacheName, 30);  // Limit the cache size to 30 items
                     return networkResponse;
                 });
             });
@@ -66,13 +80,10 @@ self.addEventListener('fetch', event => {
 
 // Function to limit the cache size
 const limitCacheSize = (cacheName, numberOfAllowedFiles) => {
-    // Open the specified cache
     caches.open(cacheName).then(cache => {
-        // Get an array of cache keys
         cache.keys().then(keys => {
-            // If the number of files exceeds the allowed limit
             if (keys.length > numberOfAllowedFiles) {
-                // Delete the oldest file (first index) and call the function again until the count is reached
+                // Delete the oldest cached files until the limit is met
                 cache.delete(keys[0]).then(() => limitCacheSize(cacheName, numberOfAllowedFiles));
             }
         });
