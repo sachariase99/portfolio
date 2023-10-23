@@ -1,25 +1,38 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Portfolio - Sachariase",
+  "short_name": "Portfolio",
+  "description": "A Portfolio showing some of the websites i've created",
+  "start_url": "./index.html",
+  "id": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "logo.png",
+      "sizes": "875x803",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "./logo/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/x-icon"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "./logo/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "./logo/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "./logo/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/x-icon"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  ]
 }
