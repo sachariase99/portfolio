@@ -4,6 +4,7 @@
   "description": "A Portfolio showing some of the websites i've created",
   "start_url": "./index.html",
   "id": "./index.html",
+  "scope": "/index.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
