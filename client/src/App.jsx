@@ -4,17 +4,25 @@ import { useEffect } from 'react'
 
 function App() {
   useEffect(() => {
+    // Check if the browser supports Service Workers
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('./service-worker.js')
-        .then(registration => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch(error => {
-          console.error('Service Worker registration failed:', error);
-        })
+      // Add a 'load' event listener to ensure the page is fully loaded before registering the Service Worker
+      window.addEventListener('load', () => {
+        // Attempt to register the Service Worker using './service-worker.js' as the script
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(registration => {
+            // If registration is successful, log the scope of the Service Worker
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch(error => {
+            // If registration fails, log an error message
+            console.error('Service Worker registration failed:', error);
+          });
+      });
     }
-  })
+  }, []);
+  
+
   return (
     <div>
       <div id='blurred' className='bg-dark'>
@@ -28,7 +36,7 @@ function App() {
         </div>
         <Footer />
       </div>
-        <LandingPage />
+      <LandingPage />
     </div>
   )
 }
