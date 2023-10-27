@@ -57,26 +57,28 @@ self.addEventListener('activate', event => {
     );
 });
 
-// Event listener for the 'fetch' event
 self.addEventListener('fetch', event => {
-    // Log that the service worker is fetching a resource
     console.log('Service Worker: Fetching', event.request.url);
 
-    // Respond to the fetch event
+    if (event.request.method !== 'GET') {
+        // Do not cache POST requests, just fetch them from the network
+        event.respondWith(fetch(event.request));
+        return;
+    }
+
     event.respondWith(
         caches.match(event.request).then(response => {
-            // Check if the requested resource is in the cache
             return response || fetch(event.request).then(networkResponse => {
-                // If not in the cache, add it to the cache and limit cache size
                 return caches.open(cacheName).then(cache => {
                     cache.put(event.request, networkResponse.clone());
-                    limitCacheSize(cacheName, 30);  // Limit the cache size to 30 items
+                    limitCacheSize(cacheName, 30);
                     return networkResponse;
                 });
             });
         })
     );
 });
+
 
 // Function to limit the cache size
 const limitCacheSize = (cacheName, numberOfAllowedFiles) => {
