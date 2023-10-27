@@ -1,4 +1,4 @@
-const cacheName = 'cache-v2'; // Cache version
+const cacheName = 'cache-v4'; // Cache version
 
 // Event listener for the 'install' event
 self.addEventListener('install', event => {
